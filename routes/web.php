@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin', 'Admin\AdminController@index')->name('admin.dashboard');
+Route::get('/data_container', 'Admin\AdminController@data_container')->name('admin.data_container');
+Route::get('/data_kapal', 'Admin\AdminController@data_kapal')->name('admin.data_kapal');
