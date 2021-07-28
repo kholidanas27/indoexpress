@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::get('/admin', 'Admin\AdminController@index')->name('admin.dashboard');
 Route::get('/data_container', 'Admin\AdminController@data_container')->name('admin.data_container');
 Route::get('/data_kapal', 'Admin\AdminController@data_kapal')->name('admin.data_kapal');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
