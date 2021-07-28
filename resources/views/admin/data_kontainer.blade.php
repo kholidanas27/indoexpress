@@ -13,94 +13,41 @@
     </div>
     <div class="card-body">
     <div class="table-responsive">
+        <a href="" class="btn btn-primary">Tambah Data</a>
+        <br>
         <table class="table table-striped" id="table-1">
         <thead>
             <tr>
             <th class="text-center">
                 #
             </th>
-            <th>Task Name</th>
-            <th>Progress</th>
-            <th>Members</th>
-            <th>Due Date</th>
-            <th>Status</th>
+            <th>Nama Container</th>
+            <th>Kode Kontainer</th>
+            <th>Ukuran</th>
             <th>Action</th>
             </tr>
         </thead>
         <tbody>
+            @foreach($container as $c)
             <tr>
-            <td>
-                1
-            </td>
-            <td>Create a mobile app</td>
-            <td class="align-middle">
-                sdkjfnsd
-            </td>
-            <td>
-                sdhsdk
-            </td>
-            <td>2018-01-20</td>
-            <td><div class="badge badge-success">Completed</div></td>
-            <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                <td>
+                    {{ $c->id_container }}
+                </td>
+                <td> {{ $c->nama_container }}</td>
+                <td class="align-middle">
+                    {{ $c->kode_container }}
+                </td>
+                <td>
+                    {{ $c->ukuran }}
+                </td>
+                <td>
+                    <a href="#" class="btn btn-warning">Edit</a>
+                    <a href="#" class="btn btn-danger">hapus</a>
             </tr>
-            <tr>
-            <td>
-                2
-            </td>
-            <td>Redesign homepage</td>
-            <td class="align-middle">
-               sdfjsdf
-            </td>
-            <td>
-                dsfhsdhs
-            </td>
-            <td>2018-04-10</td>
-            <td>
-                <div class="badge badge-info">Todo</div>
-            </td>
-            <td>
-                <a href="#" class="btn btn-secondary">Detail</a>
-            </td>
-            </tr>
-            <tr>
-            <td>
-                3
-            </td>
-            <td>Backup database</td>
-            <td class="align-middle">
-               djhgfsdfsjdfd
-            </td>
-            <td>
-                sdkjfhgsajkhf
-            </td>
-            <td>2018-01-29</td>
-            <td>
-                <div class="badge badge-warning">In Progress</div>
-            </td>
-            <td><a href="#" class="btn btn-secondary">Detail</a>
-            </td>
-            </tr>
-            <tr>
-            <td>
-                4
-            </td>
-            <td>Input data</td>
-            <td class="align-middle">
-                dgfhsdfd
-            </td>
-            <td>
-                ashfas
-            </td>
-            <td>2018-01-16</td>
-            <td>
-                <div class="badge badge-success">Completed</div>
-            </td>
-            <td>
-                <a href="#" class="btn btn-secondary">Detail</a>
-            </td>
-            </tr>
+            @endforeach
         </tbody>
         </table>
+    </div>
     </div>
     <div class="card-footer bg-whitesmoke">
     This is card footer

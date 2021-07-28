@@ -1,26 +1,53 @@
 @extends('layout.master')
 @section('breadcumb')
-<h1>Default Layout</h1>
+<h1>Data Kapal Cargo</h1>
 <div class="section-header-breadcrumb">
-    <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-    <div class="breadcrumb-item"><a href="#">Layout</a></div>
-    <div class="breadcrumb-item">Default Layout</div>
+    <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">Dashboard</a></div>
+    <div class="breadcrumb-item"><a href="{{ route('admin.data_container') }}">Data Kapal</a></div>
 </div>
 @endsection
 @section('content')
-<h2 class="section-title">This is Example Page</h2>
-<p class="section-lead">This page is just an example for you to create your own page.</p>
     <div class="card">
     <div class="card-header">
-        <h4>Example Card</h4>
+        <h4>Daftar Kapal</h4>
     </div>
     <div class="card-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="table-responsive">
+        <a href="" class="btn btn-primary">Tambah Data</a>
+        <br>
+        <table class="table table-striped" id="table-1">
+        <thead>
+            <tr>
+            <th class="text-center">
+                #
+            </th>
+            <th>Nama Kapal Cargo</th>
+            <th>Jenis Kapal Cargo</th>
+            <th>Kapasitas</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+         <tbody>
+            @foreach($kapal as $k)
+            <tr>
+                <td>
+                    {{ $k->id_cargo }}
+                </td>
+                <td> {{ $k->nama_cargo }}</td>
+                <td class="align-middle">
+                    {{ $k->jenis_cargo }}
+                </td>
+                <td>
+                    {{ $k->kapasitas }}
+                </td>
+                <td>
+                    <a href="#" class="btn btn-warning">Edit</a>
+                    <a href="#" class="btn btn-danger">hapus</a>
+            </tr>
+            @endforeach
+        </tbody>
+        </table>
+    </div>
     </div>
     <div class="card-footer bg-whitesmoke">
     This is card footer
